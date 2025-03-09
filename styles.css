@@ -1,0 +1,166 @@
+h1 {
+    color: rgb(3, 190, 3);
+    font-size: 60px;
+    font-weight: 900;
+    font-style: normal;
+    padding: 10px 0;
+    margin: 20px 0;
+    text-align: left;
+    text-shadow: 4px #1c1a1a;
+}
+p {
+    color: rgb(105, 102, 102);
+    font-size: 19px;
+    padding: auto;
+    border: 2px #ccc;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(203, 246, 217);
+}
+#nav-1, #nav-3, #nav-5 {
+    background-color: rgb(199, 196, 196);
+}
+#nav-2, #nav-4, #nav-6 {
+    background-color: rgb(218, 210, 210);
+}
+h2 {
+    font-size: 30px;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+h4, h3 {
+    color: #232925;
+    padding: 10px 0;
+    margin: 20px 0;
+    font-size: 22px;
+}
+#Leaderboard {
+    border: 2px solid;
+    width: 30%;
+    text-align: center;
+    background-color: rgb(203, 196, 196);
+    box-shadow: #333;
+    border-radius: 4px;
+}
+
+#story-form {
+    background-color: #b5b0b0; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+#story-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333; 
+}
+#story-form input[type="text"],
+#story-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333; 
+    background-color: #f9f9f9; 
+}
+
+#story-form input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#story-form input[type="submit"]:hover {
+    background-color: #3b9640;
+}
+
+
+#story-form input[type="text"]:focus,
+#story-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+nav img {
+    border-radius: 8px;
+}
+nav img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#achievements label {
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+}
+
+#achievements input[type="checkbox"] {
+    accent-color: #4CAF50;
+}
+
+#achievements input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#achievements input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+section input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333; 
+    background-color: #f9f9f9;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+section textarea:focus {
+    border-color: #4CAF50;
+}
+section input[type="submit"]:hover {
+    background-color: #45a049;
+}
+footer p {
+    font-size: 15px;
+}
+
