@@ -41,6 +41,29 @@
         <label for="achievement1">Participated in the community clean up</label><br>
         <input type="submit" value="Submit">
       </form>
+
+      <p id="thank-you-message" style="display: none; color: green; font-weight: bold; margin-top: 10px;"></p>
+
+<script>
+  document.getElementById("achievements").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    const checkedAchievements = Array.from(document.querySelectorAll("#achievements input:checked"))
+      .map(input => input.nextElementSibling.textContent) 
+      .join(", ");
+
+    const thankYouMessage = document.getElementById("thank-you-message");
+
+    if (checkedAchievements) {
+      thankYouMessage.textContent = `🎉 Thank you! You have achieved: ${checkedAchievements}. Keep up the great work!`;
+    } else {
+      thankYouMessage.textContent = "You haven't selected any achievements yet. Start your eco-friendly journey today! 🌱";
+    }
+
+    thankYouMessage.style.display = "block"; 
+    this.reset(); 
+  });
+</script>
     </section>
   </main>
   <footer>

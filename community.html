@@ -12,18 +12,14 @@
     <p>Your Guide to Sustainable Living</p>
   </header>
   <nav>
-    <table>
-      <tr>
-      <td><a href="index.html"><img src="home.jpg" alt="about pic" width="100" height="25"></a></td>
-      <td><a href="about.html"><img src="about.jpg" alt="about pic" width="100" height="25"></a></td>
-      <td><a href="contact.html"><img src="contact.jpg" alt="contact pic" width="100" height="25"></a></td>
-      </tr>
-      <tr>
-      <td><a href="ecoTracker.html"><img src="ecotracker.jpg" alt="eco tracker pic" width="100" height="25"></a></td>
-      <td><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic" width="100" height="25"></a></td>
-      <td><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic" width="100" height="25"></a></td>
-      </tr>
-    </table>
+    <ul>
+      <li><a href="index.html"><img src="home.jpg" alt="home pic"></a></li>
+      <li><a href="about.html"><img src="about.jpg" alt="about pic"></a></li>
+      <li><a href="contact.html"><img src="contact.jpg" alt="contact pic"></a></li>
+      <li><a href="ecoTracker.html"><img src="ecotracker.jpg" alt="eco tracker pic"></a></li>
+      <li><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic"></a></li>
+      <li><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic"></a></li>
+    </ul>
   </nav>
   <main>
     <section>
@@ -33,7 +29,7 @@
       
       <h2>User Stories</h2>
       <article>
-        <h4>Jane's Journey to reduced Waste</h4>
+        <h4>Jane's Journey to Reduced Waste</h4>
         <p>Jane shares how she reduced her household waste by 80% in just six months. Read her story <a href="#">here</a>.</p>
       </article>
       <article>
@@ -42,15 +38,28 @@
       </article>
 
       <h3>Share Your Story</h3>
-      <form id="story-form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name">
-        
-        <label for="story">Your Story:</label>
-        <textarea id="story" name="story" rows="5"></textarea>
-        
-        <input type="submit">
-      </form>
+        <form id="story-form" action="#" method="POST">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="story">Your Story:</label>
+          <textarea id="story" name="story" rows="5" placeholder="Write your eco-friendly journey here..." required></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      
+        <script>
+          document.getElementById("story-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const name = document.getElementById("name").value;
+            const story = document.getElementById("story").value;
+            
+            if (name && story) {
+              alert(`Thank you, ${name}! Your story has been received.`);
+              this.reset(); 
+            }
+          });
+        </script>
 
       <table id="Leaderboard">
         <caption><h3>Leaderboard</h3></caption>
@@ -69,7 +78,7 @@
           </tr>
           <tr>
             <td>2</td>
-            <td>John NellisS</td>
+            <td>John Nellis</td>
             <td>128</td>
           </tr>
           <tr>

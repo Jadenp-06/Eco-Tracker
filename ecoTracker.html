@@ -37,10 +37,31 @@
         </select>
         <button type="submit">Select</button>
       </form>
+      <p id="thank-you-message" style="display: none; color: green; font-weight: bold; margin-top: 10px;"></p>
       <div id="log">
         <h3>Your Actions:</h3>
         <ul id="action-list"></ul>
       </div>
+
+      <script>
+        document.getElementById("tracker-form").addEventListener("submit", function(event) {
+          event.preventDefault(); 
+      
+          const actionSelect = document.getElementById("action");
+          const selectedAction = actionSelect.options[actionSelect.selectedIndex].text; 
+          const actionList = document.getElementById("action-list");
+          const thankYouMessage = document.getElementById("thank-you-message");
+      
+          
+          const listItem = document.createElement("li");
+          listItem.textContent = selectedAction;
+          actionList.appendChild(listItem);
+      
+          
+          thankYouMessage.textContent = `Thank you! You have logged: ${selectedAction}. Keep making a difference! 🌍`;
+          thankYouMessage.style.display = "block"; 
+        });
+      </script>
     </section>
   </main>
   <footer>
