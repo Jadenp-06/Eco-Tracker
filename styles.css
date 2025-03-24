@@ -32,7 +32,13 @@ p {
     border: 2px #ccc;
 }
 
-nav ul {
+/* Responsive Navigation Styles - Corrected */
+nav {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.responsive-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -40,20 +46,20 @@ nav ul {
     list-style-type: none;
 }
 
-.navigation {
+.responsive-nav li {
+    flex: 1 1 calc(33.33% - 20px);
     margin: 10px;
-    flex: 1 1 calc(33.33% - 20px); /* 3 items per row with margin */
-    max-width: 400px;
+    max-width: 400px; /* Increased for larger buttons */
 }
 
-nav img {
+.responsive-nav img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
 
-nav img:hover {
+.responsive-nav img:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -118,22 +124,11 @@ footer {
 
 /* Responsive Layouts */
 @media (max-width: 768px) {
-    /* Navigation stack vertically */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    .responsive-nav li {
+        flex: 1 1 45%;
+        max-width: 90%; /* Allow larger mobile buttons */
     }
 
-    .navigation {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .navigation img {
-        width: 90%;
-    }
-
-    /* Smaller heading for mobile */
     h1 {
         font-size: 36px;
     }
@@ -147,7 +142,7 @@ footer {
     }
 
     #Leaderboard {
-        width: 80%; /* Adjust leaderboard width */
+        width: 80%;
     }
 
     footer p {
@@ -156,7 +151,11 @@ footer {
 }
 
 @media (max-width: 480px) {
-    /* Even smaller adjustments for mobile */
+    .responsive-nav li {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
     h1 {
         font-size: 28px;
     }
@@ -174,21 +173,16 @@ footer {
         padding: 15px;
     }
 
-    #story-form input[type="text"],
-    #story-form textarea {
-        font-size: 14px;
+    #Leaderboard {
+        width: 100%;
     }
 
     footer p {
         font-size: 10px;
     }
-
-    #Leaderboard {
-        width: 100%; /* Ensure leaderboard uses full width */
-    }
 }
 
-/* Other Styles */
+/* Other Styles (unchanged) */
 #achievements {
     display: flex;
     flex-direction: column;
@@ -205,7 +199,8 @@ footer {
     accent-color: #4CAF50;
 }
 
-#achievements input[type="submit"] {
+#achievements input[type="submit"],
+section input[type="submit"] {
     background-color: #4CAF50; 
     color: white;
     padding: 10px 20px;
@@ -216,19 +211,9 @@ footer {
     margin-top: 10px;
 }
 
-#achievements input[type="submit"]:hover {
+#achievements input[type="submit"]:hover,
+section input[type="submit"]:hover {
     background-color: #45a049;
-}
-
-section input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 section textarea {
@@ -247,8 +232,3 @@ section textarea {
 section textarea:focus {
     border-color: #4CAF50;
 }
-
-section input[type="submit"]:hover {
-    background-color: #45a049;
-}
-

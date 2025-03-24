@@ -1,90 +1,86 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eco-Life | contact</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-        <h1>CONTACT US</h1>
-        <p>Your guide to sustainable living.</p>
-        </header>
-        <nav>
-            <table>
-                <tr>
-                <td><a href="index.html"><img src="home.jpg" alt="about pic" width="100" height="25"></a></td>
-                <td><a href="about.html"><img src="about.jpg" alt="about pic" width="100" height="25"></a></td>
-                <td><a href="community.html"><img src="community.jpg" alt="community pic" width="100" height="25"></a></td>
-                </tr>
-                <tr>
-                <td><a href="ecoTracker.html"><img src="ecotracker.jpg" alt="eco tracker pic" width="100" height="25"></a></td>
-                <td><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic" width="100" height="25"></a></td>
-                <td><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic" width="100" height="25"></a></td>
-                </tr>
-              </table>
-        </nav>
-        <section>
-            <p>Reach out on social media:</p>
-            <a href="https://instagram.com">Instagram</a><br>
-            <a href="https://facebook.com">Facebook</a><br>
-            <a href="https://X.com">X, f.k.a Twitter</a>
-        </section>
-        <h2>Meet the Team</h2>
-        <section>
-            <p>MOJO SALISU, 18</p>
-            <img src="chelsea.jpg" alt="Mojo Salisu">
-            <p>JADEN PATRICK, 65</p>
-            <img src="chelsea.jpg" alt="Jaden Patrick"> 
-            <p>SOLOMON AGOMUO</p>
-            <img src="chelsea.jpg" alt="Solomon">
-        </section>
-        <h2>Feedback</h2>
-        <section>
-            <form id="feedback-form">
-                <label for="feedback">Your Feedback:</label>
-                <textarea id="feedback" name="feedback" rows="8" cols="50" placeholder="Give feedback..." required></textarea><br>
-                <input type="submit" value="Submit Feedback">
-              </form>
-              <p id="feedback-thank-you" style="display: none; color: blue; font-weight: bold; margin-top: 10px;"></p>
-
-        </section>
-        
-
-<script>
-  document.getElementById("tracker-form").addEventListener("submit", function(event) {
-    event.preventDefault(); 
-
-    const actionSelect = document.getElementById("action");
-    const selectedAction = actionSelect.options[actionSelect.selectedIndex].text;
-    const actionList = document.getElementById("action-list");
-    const thankYouMessage = document.getElementById("thank-you-message");
-
-    
-    const listItem = document.createElement("li");
-    listItem.textContent = selectedAction;
-    actionList.appendChild(listItem);
-
-    
-    thankYouMessage.textContent = `Thank you! You have logged: ${selectedAction}. Keep making a difference! 🌍`;
-    thankYouMessage.style.display = "block"; 
-  });
-
-  document.getElementById("feedback-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents page refresh
-
-    const feedbackText = document.getElementById("feedback").value.trim();
-    const feedbackThankYou = document.getElementById("feedback-thank-you");
-
-    if (feedbackText) {
-      feedbackThankYou.textContent = "Thank you for your feedback! We appreciate your thoughts. 😊";
-      feedbackThankYou.style.display = "block";
-      this.reset(); // Clear the feedback form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Life | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @keyframes fadeInZoom {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
-  });
-</script>
-    </body>
-    <footer>
-        <p>&copy; Mojo, Jaden, Solomon 2025</p>
-    </footer>
+
+    #feedback-thank-you {
+      display: none;
+      color: blue;
+      font-weight: bold;
+      margin-top: 10px;
+      animation: fadeInZoom 0.7s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CONTACT US</h1>
+    <p>Your guide to sustainable living.</p>
+  </header>
+  <nav>
+    <ul class="responsive-nav">
+      <li><a href="index.html"><img src="home.jpg" alt="home pic"></a></li>
+      <li><a href="about.html"><img src="about.jpg" alt="about pic"></a></li>
+      <li><a href="community.html"><img src="community.jpg" alt="community pic"></a></li>
+      <li><a href="ecoTracker.html"><img src="ecotracker.jpg" alt="eco tracker pic"></a></li>
+      <li><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic"></a></li>
+      <li><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic"></a></li>
+    </ul>
+  </nav>
+  <section>
+    <p>Reach out on social media:</p>
+    <a href="https://instagram.com">Instagram</a><br>
+    <a href="https://facebook.com">Facebook</a><br>
+    <a href="https://X.com">X, f.k.a Twitter</a>
+  </section>
+  <h2>Meet the Team</h2>
+  <section>
+    <p>MOJO SALISU, 18</p>
+    <img src="chelsea.jpg" alt="Mojo Salisu">
+    <p>JADEN PATRICK, 65</p>
+    <img src="chelsea.jpg" alt="Jaden Patrick"> 
+    <p>SOLOMON AGOMUO</p>
+    <img src="chelsea.jpg" alt="Solomon">
+  </section>
+  <h2>Feedback</h2>
+  <section>
+    <form id="feedback-form">
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="8" cols="50" placeholder="Give feedback..." required></textarea><br>
+      <input type="submit" value="Submit Feedback">
+    </form>
+    <p id="feedback-thank-you"></p>
+  </section>
+
+  <script>
+    document.getElementById("feedback-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const feedbackText = document.getElementById("feedback").value.trim();
+      const feedbackThankYou = document.getElementById("feedback-thank-you");
+
+      if (feedbackText) {
+        feedbackThankYou.textContent = "Thank you for your feedback! We appreciate your thoughts. 😊";
+        feedbackThankYou.style.display = "block";
+        this.reset();
+
+        setTimeout(() => {
+          feedbackThankYou.style.display = "none";
+        }, 4000);
+      }
+    });
+  </script>
+
+  <footer>
+    <p>&copy; Mojo, Jaden, Solomon 2025</p>
+  </footer>
+</body>
 </html>

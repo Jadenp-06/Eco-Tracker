@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco-Life | Eco Tracker</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    @keyframes fadeInSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #thank-you-message {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      animation: fadeInSlideUp 0.7s ease;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,18 +26,14 @@
     <p>Your Guide to Sustainable Living</p>
   </header>
   <nav>
-    <table>
-      <tr>
-      <td><a href="index.html"><img src="home.jpg" alt="about pic" width="100" height="25"></a></td>
-      <td><a href="about.html"><img src="about.jpg" alt="about pic" width="100" height="25"></a></td>
-      <td><a href="contact.html"><img src="contact.jpg" alt="contact pic" width="100" height="25"></a></td>
-      </tr>
-      <tr>
-      <td><a href="community.html"><img src="community.jpg" alt="community pic" width="100" height="25"></a></td>
-      <td><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic" width="100" height="25"></a></td>
-      <td><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic" width="100" height="25"></a></td>
-      </tr>
-    </table>
+    <ul class="responsive-nav">
+      <li><a href="index.html"><img src="home.jpg" alt="home pic"></a></li>
+      <li><a href="about.html"><img src="about.jpg" alt="about pic"></a></li>
+      <li><a href="contact.html"><img src="contact.jpg" alt="contact pic"></a></li>
+      <li><a href="community.html"><img src="community.jpg" alt="community pic"></a></li>
+      <li><a href="tipsAndResourses.html"><img src="resources.jpg" alt="resources pic"></a></li>
+      <li><a href="achievements.html"><img src="achievements.jpg" alt="achievements pic"></a></li>
+    </ul>
   </nav>
   <main>
     <section>
@@ -37,7 +47,7 @@
         </select>
         <button type="submit">Select</button>
       </form>
-      <p id="thank-you-message" style="display: none; color: green; font-weight: bold; margin-top: 10px;"></p>
+      <p id="thank-you-message"></p>
       <div id="log">
         <h3>Your Actions:</h3>
         <ul id="action-list"></ul>
@@ -52,14 +62,18 @@
           const actionList = document.getElementById("action-list");
           const thankYouMessage = document.getElementById("thank-you-message");
       
-          
           const listItem = document.createElement("li");
           listItem.textContent = selectedAction;
           actionList.appendChild(listItem);
       
-          
           thankYouMessage.textContent = `Thank you! You have logged: ${selectedAction}. Keep making a difference! 🌍`;
-          thankYouMessage.style.display = "block"; 
+          thankYouMessage.style.display = "block";
+
+          setTimeout(() => {
+            thankYouMessage.style.display = "none";
+          }, 4000);
+
+          this.reset();
         });
       </script>
     </section>
