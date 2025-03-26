@@ -6,13 +6,13 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Teko';
     background-color: rgb(203, 246, 217);
 }
 
 header {
-    text-align: left;
-    padding: 10px 20px;
+    text-align: center;
+    padding: 20px 40px;
 }
 
 h1 {
@@ -78,6 +78,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    
 }
 
 #story-form label {
@@ -126,7 +127,7 @@ footer {
 @media (max-width: 768px) {
     .responsive-nav li {
         flex: 1 1 45%;
-        max-width: 90%; /* Allow larger mobile buttons */
+        max-width: 90%; 
     }
 
     h1 {
@@ -182,7 +183,7 @@ footer {
     }
 }
 
-/* Other Styles (unchanged) */
+
 #achievements {
     display: flex;
     flex-direction: column;
@@ -231,4 +232,129 @@ section textarea {
 
 section textarea:focus {
     border-color: #4CAF50;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;       
+    height: 500px;            
+    padding: 20px;            
+}
+
+.about-section h2 {
+    font-size: 2.5rem;         
+    margin-bottom: 20px;       
+}
+.about-section h3 {
+    font-size: 2.0rem;         
+    margin-bottom: 20px;       
+}
+
+.about-section p {
+    font-size: 1.25rem;        
+    max-width: 800px;          
+    line-height: 1.6;          
+}
+
+.centered-section {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    gap: 70px;                
+    flex-wrap: wrap;         
+    text-align: center;       
+    margin: 0 auto;           
+    padding: 20px;
+}
+
+.centered-section .social-media, .centered-section .team, .centered-section .feedback {
+    flex: 1 1 250px;          
+    max-width: 400px;         
+}
+
+
+.centered-section .social-media img {
+    width: 150px;  
+    margin-bottom: 10px;
+}
+
+
+.centered-section .team img {
+    width: 120px;  
+    height: 120px;  
+    border-radius: 50%;  
+    margin-bottom: 10px;
+}
+
+
+.centered-section .feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;  
+}
+
+.centered-section .feedback textarea {
+    resize: vertical;
+}
+
+
+@media (max-width: 768px) {
+    .centered-section {
+        flex-direction: column;  
+    }
+}
+
+.social-media-header {
+    font-size: 24px; 
+    font-weight: bold;
+    text-align: center; 
+    margin-bottom: 70px;
+    margin-top: 70px;
+}
+
+.community-section h1{
+    font-size: 50px;
+    color: #1c1a1a;
+    text-align: center;
+
+
+}
+
+.community-section h3{
+    font-size: 35px;                
+    line-height: 1.6; 
+    text-align: center;
+    color: #1c1a1a;  
+
+
+}
+.community-section h4{
+    font-size: 25px;                
+    line-height: 1.6; 
+    text-align: center;
+    color: #1c1a1a;  
+
+
+}
+
+.community-section p{
+    font-size: 20px;                
+    line-height: 1.6; 
+    text-align: center;  
+
+
+}
+
+.community-section form{
+    font-size: 20px;                
+    line-height: 1.6; 
+    text-align: center;  
+
+
 }
